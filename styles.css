@@ -19,6 +19,8 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
 }
 
 header {
@@ -31,6 +33,8 @@ header {
 header h1 {
     margin-bottom: 10px;
     font-size: 2.5rem;
+    animation: fadeIn 1s ease-in;
+    /* Fade-in effect */
 }
 
 header p {
@@ -54,6 +58,12 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #ffa500;
 }
 
 section {
@@ -62,6 +72,10 @@ section {
     max-width: 900px;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease-in forwards;
+    /* Fade-in and slide-up */
 }
 
 h2 {
@@ -98,4 +112,48 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 15px;
+        margin: 10px;
+    }
 }
